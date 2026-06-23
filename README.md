@@ -78,6 +78,29 @@ refresh_dataset_task ─► wait_dataset_refresh_task (polling + backoff)
                                                                    (ExportTo → polling 429-aware → e-mail + Teams)
 ```
 
+## Executável único (BI_Notify.exe)
+
+Um launcher de um clique que sobe **tudo** (Postgres, Redis, API, worker e frontend)
+via Docker, aplica as migrations e abre o painel no navegador. Fechar a janela
+(Ctrl+C) derruba a stack.
+
+**Pré-requisitos:** Docker Desktop instalado e em execução; Python 3.10+ (só para gerar o .exe).
+
+**Gerar o .exe** (uma vez, na sua máquina Windows — duplo-clique):
+
+```bat
+build_exe.bat
+```
+
+Isso cria `BI_Notify.exe` na raiz do projeto (ao lado do `docker-compose.yml`).
+Depois é só **dar duplo-clique no BI_Notify.exe**: ele valida o Docker, roda
+`docker compose up --build`, espera o `/health`, migra o banco e abre
+<http://localhost:5173>.
+
+> O .exe é apenas um **orquestrador** do Docker (não embute Postgres/Redis).
+> Mantém a mesma arquitetura de produção. O binário precisa ser gerado no
+> Windows (PyInstaller não faz cross-compile a partir de Linux).
+
 ## Passo a passo de execução
 
 ### Opção A — Docker (recomendado: sobe tudo)
