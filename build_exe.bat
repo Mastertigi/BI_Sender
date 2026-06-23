@@ -11,11 +11,7 @@ echo [*] Instalando PyInstaller (se necessario)...
 python -m pip install --quiet --upgrade pyinstaller || goto :erro
 
 echo [*] Compilando BI_Notify.exe ...
-python -m PyInstaller --onefile --console --name BI_Notify ^
-  --distpath "%~dp0" ^
-  --workpath "%~dp0\build\_pyi" ^
-  --specpath "%~dp0\build" ^
-  "%~dp0launcher\run.py" || goto :erro
+python -m PyInstaller --onefile --console --name BI_Notify --distpath "%~dp0." --workpath "%~dp0build\_pyi" --specpath "%~dp0build" "%~dp0launcher\run.py" || goto :erro
 
 echo.
 echo [OK] Gerado: %~dp0BI_Notify.exe
