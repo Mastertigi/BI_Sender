@@ -81,6 +81,10 @@ export default function ExecutionsPage() {
   return (
     <>
       <h1 className="page-title">Execuções</h1>
+      <p className="page-sub">
+        Acompanhe cada disparo em tempo real — do refresh do dataset à entrega
+        por e-mail e Teams. Dispare manualmente sem esperar o Dataflow.
+      </p>
       <TriggerBox onDone={load} />
 
       <div className="toolbar">

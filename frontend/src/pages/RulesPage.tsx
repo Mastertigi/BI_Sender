@@ -38,9 +38,13 @@ export default function RulesPage() {
   return (
     <>
       <div className="toolbar">
-        <h1 className="page-title" style={{ margin: 0 }}>
-          Regras de Roteamento
-        </h1>
+        <div>
+          <h1 className="page-title">Regras de Roteamento</h1>
+          <p className="page-sub">
+            Defina quem recebe o quê: cada regra liga uma diretoria a um
+            relatório/página, com RLS, e-mail e canal do Teams.
+          </p>
+        </div>
         <button onClick={() => setCreating(true)}>+ Nova regra</button>
       </div>
 
