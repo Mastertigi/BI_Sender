@@ -231,6 +231,56 @@ label.field span { display: block; color: var(--muted); font-size: 12px; margin-
 .muted { color: var(--muted); }
 .spinner { color: var(--muted); padding: 30px 0; text-align: center; }
 
+/* ---------- Ajuda no formulário ---------- */
+.hint { display: block; color: var(--muted); font-size: 11.5px; margin-top: 5px; line-height: 1.4; }
+.form-section {
+  margin: 18px 0 12px; font-size: 12px; font-weight: 700; letter-spacing: .5px;
+  text-transform: uppercase; color: var(--cyan);
+  border-bottom: 1px solid var(--border); padding-bottom: 6px;
+}
+.callout {
+  border: 1px solid var(--border-glow); background: var(--grad-soft);
+  border-radius: 10px; padding: 12px 14px; font-size: 13px; color: var(--text);
+  margin-bottom: 18px; line-height: 1.5;
+}
+
+/* ---------- Documentação ---------- */
+.doc { max-width: 880px; }
+.doc h2 {
+  font-size: 18px; margin: 30px 0 10px; padding-top: 16px;
+  border-top: 1px solid var(--border); font-weight: 800;
+}
+.doc h2:first-of-type { border-top: none; padding-top: 0; }
+.doc h3 { font-size: 15px; margin: 18px 0 8px; font-weight: 700; color: var(--cyan); }
+.doc p, .doc li { color: #c4cde3; font-size: 14px; line-height: 1.65; }
+.doc ul, .doc ol { padding-left: 22px; }
+.doc li { margin-bottom: 6px; }
+.doc code {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 6px;
+  padding: 1px 6px; font-size: 12.5px; color: var(--green); font-family: "Cascadia Code", Consolas, monospace;
+}
+.doc pre {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px 16px; overflow-x: auto; font-size: 12.5px; line-height: 1.5;
+}
+.doc pre code { background: none; border: none; padding: 0; color: #d6def0; }
+.doc .toc {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;
+}
+.doc .toc a {
+  font-size: 12.5px; padding: 6px 12px; border: 1px solid var(--border);
+  border-radius: 999px; color: var(--muted);
+}
+.doc .toc a:hover { border-color: var(--border-glow); color: var(--text); }
+.doc .note {
+  border-left: 3px solid var(--cyan); background: rgba(43,212,255,0.06);
+  padding: 10px 14px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 13px;
+}
+.doc .warn-box {
+  border-left: 3px solid var(--warn); background: rgba(245,196,81,0.07);
+  padding: 10px 14px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 13px;
+}
+
 @media (max-width: 1080px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
